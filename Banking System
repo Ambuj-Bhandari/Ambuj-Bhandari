@@ -1,0 +1,66 @@
+import java.util.*;
+class Account
+{
+    int account_number;
+	String name;
+	int amount;
+	void insert(int acc,String n,int b)
+	{ 
+		account_number=acc;
+		name=n;
+		amount=b;
+	}
+ 	void deposit(int d)
+	{
+		amount+=d;
+	}
+		
+	void withdraw(int w)
+	{
+		if(w<amount)
+      		{
+	            amount-=w;
+		}
+		else
+		{
+	            System.out.println("Error Insufficient balance!!!");
+		}
+	}
+	void checkbalance()
+	{
+		System.out.println("Balance:"+amount);
+	}
+	void display()
+	{
+		System.out.println("Name of Account Holder:"+name);
+		System.out.println("Account Number:"+account_number);
+		System.out.println("Amount left:"+amount);
+        }		  
+	public static void main(String args[])
+	{ 
+		Scanner in= new Scanner(System.in);
+		System.out.println("Enter the Account Number");
+		int ac=in.nextInt();
+ 		in.nextLine();
+
+		System.out.println("Enter the Name of Account Holder");
+		String s=in.nextLine();
+
+		System.out.println("Enter the Amount");
+		int u=in.nextInt();
+
+		System.out.println("Enter the Deposit Amount");
+		int d=in.nextInt();
+
+		System.out.println("Name of Withdraw Amount");		
+	        int w=in.nextInt();
+        
+		Student st= new Student();
+		st.insert(ac,s,u);
+		st.deposit(d);
+
+		st.withdraw(w);
+		st.checkbalance();
+		st.display();
+	}
+}
