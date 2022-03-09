@@ -55,7 +55,7 @@ class Account
 		System.out.println("Name of Withdraw Amount");		
 	        int w=in.nextInt();
         
-		Student st= new Student();
+		Account st= new Account();
 		st.insert(ac,s,u);
 		st.deposit(d);
 
